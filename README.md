@@ -39,29 +39,46 @@
 
 ---
 
-## 📦 Installation & Setup
+## 📦 How to Download & Install Globally
 
-You can install `live-sim` directly from this GitHub repository onto your machine:
+To use `live-sim` across **all** your React Native / Expo projects from anywhere in your terminal:
 
-### Option 1: One-Line Global Install (Recommended)
+### 🌟 Method 1: Clone & Install Globally on Your System (Recommended)
+```bash
+# 1. Clone the live-sim repository
+git clone https://github.com/Venkatasai08/live-sim.git
+
+# 2. Go into the live-sim directory
+cd live-sim
+
+# 3. Install dependencies and register globally on your computer
+npm install
+npm install -g .
+# (or run: npm link)
+```
+
+### ⚡ Method 2: One-Line Global Install (Directly from GitHub)
 ```bash
 npm install -g https://github.com/Venkatasai08/live-sim.git
 ```
 
-### Option 2: Clone & Link Locally
-```bash
-# Clone the repository
-git clone https://github.com/Venkatasai08/live-sim.git
-cd live-sim
-
-# Install and link globally
-npm install
-npm link
-```
-
-### Option 3: Run via `npx` (Zero Installation)
+### 🚀 Method 3: Run via `npx` (Zero Installation)
 ```bash
 npx https://github.com/Venkatasai08/live-sim start
+```
+
+---
+
+## 📱 How to Use Across ANY of Your Projects
+
+Once installed globally, you never need to touch the `live-sim` directory again. Simply open **any React Native or Expo project** on your computer and run:
+
+```bash
+# Navigate to ANY project folder
+cd path/to/your-app
+
+# Launch live iOS simulator streaming
+live-sim start --minutes 60
 ```
 
 ---
