@@ -10,7 +10,7 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { sh, has } from '../lib/proc.js';
-import { assertExpoProject } from '../lib/metro.js';
+import { assertExpoProject, findCloudflaredBinary } from '../lib/metro.js';
 import { WORKFLOW_PATH, GATE_PATH } from './init.js';
 import { green, red, yellow, dim, bold } from '../lib/ui.js';
 
@@ -50,6 +50,14 @@ export async function doctor(cwd) {
 
   // 4. Node.js version
   add(PASS, 'Node.js runtime', process.version);
+
+  // 5. Cloudflare Tunnel (optional accelerator)
+  const cf = findCloudflaredBinary();
+  if (cf) {
+    add(PASS, 'Cloudflare Tunnel (cloudflared)', 'Instant sub-second tunnel enabled');
+  } else {
+    add(WARN, 'Cloudflare Tunnel (cloudflared)', 'Optional: winget install Cloudflare.cloudflared (or falls back to Expo tunnel)');
+  }
 
   // 5. Workflow files in repository
   const hasWorkflow = existsSync(join(cwd, WORKFLOW_PATH));
