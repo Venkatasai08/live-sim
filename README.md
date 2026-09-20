@@ -2,40 +2,40 @@
 
 > **Zero-Push Live iOS Simulator Streaming with Sub-Second Fast Refresh (<1s)** for React Native & Expo developers on Windows, Linux, and macOS.
 
-Instead of waiting 15–25 minutes for every code change to compile on GitHub Actions, **`live-sim`** boots a high-speed remote Apple Silicon iOS Simulator in the cloud **once** (~60s) and connects it directly to your Windows machine's local Metro server (`localhost`) over a tunnel!
-
-```bash
-cd my-expo-app
-live-sim start
-```
-
-```
-› Preparing live development session
-✓ Local Metro tunnel active: exp://xxxx.exp.direct:80
-› Launching cloud iOS Simulator runner (session: 8f2a1b9c)
-✓ Dispatched simulator runner on Apple Silicon macOS image
-✓ iOS Simulator is live and connected to your PC!
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📱 iOS Simulator Live Stream (Zero-Push Mode)
-  🔗 Stream URL:   https://calm-river-1234.trycloudflare.com/?k=...
-  ⚡ Local Server: exp://xxxx.exp.direct:80
-  ⏱️  Session:      Active for 60 minutes with Fast Refresh (<1s)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Edit any code file in your project and save — changes will update instantly on the simulator!
-```
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Venkatasai08%2Flive--sim-blue?logo=github)](https://github.com/Venkatasai08/live-sim)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 🚀 Why `live-sim`?
+## 🌟 Upgraded Evolution of `native-sim`
 
-| Feature | Standard CI Rebuild (`native-sim up`) | `live-sim start` (Zero-Push Mode) |
+**`live-sim` is an upgraded, next-generation evolution inspired by [bidah/native-sim](https://github.com/bidah/native-sim).**
+
+### 💡 The Big Difference: Live Development vs. Post-Build Testing
+
+* **In [native-sim](https://github.com/bidah/native-sim)**:
+  * Pushes code to GitHub Actions and runs a full Xcode build.
+  * **You can only test the app *after* the entire 15–25 minute build completes.**
+  * Every single bug fix or UI change requires another `git commit`, `git push`, and another 15–25 minute wait.
+
+* **In `live-sim` (Zero-Push Live Mode)**:
+  * Boots a cloud Apple Silicon iOS Simulator in ~60 seconds with pre-installed Expo Go and connects directly to your Windows machine's local Metro server (`localhost:8081`) over a high-speed secure tunnel.
+  * **You test your app *live while coding* with instant Fast Refresh (<1s) on every file save!**
+  * **Zero Git commits, zero pushes, and zero CI build wait times** during your entire development session.
+
+---
+
+## 📊 Feature Comparison
+
+| Feature | [native-sim](https://github.com/bidah/native-sim) | `live-sim` (This Project) ⚡ |
 |---|---|---|
-| **Wait Time on File Save** | 15–25 minutes (Full rebuild) | **< 1 second (Instant Fast Refresh)** |
-| **Git Commits / Pushes** | Required on every test | **0 Git Pushes (Zero-Push)** |
-| **Simulator Boot Time** | ~25 minutes | **~60 seconds** |
-| **Where Code Runs** | Compiled remotely on GitHub | **Bundled live from your local PC** |
+| **Primary Purpose** | Testing static builds on iOS | **Active live development & coding** |
+| **When Can You Test?** | **Only after completion of full build** | **Live in real-time as you code** |
+| **Wait Time on File Save** | 15–25 minutes (Full Xcode rebuild) | **< 1 second (Instant Fast Refresh)** |
+| **Git Push Required on Changes?** | Yes, on every test iteration | **No (Zero-Push Live Mode)** |
+| **Simulator Startup Time** | 15–25 minutes | **~60 seconds** |
+| **Where Code Runs** | Static compiled app on CI | **Bundled live from your local PC** |
+| **Cross-Platform Support** | Windows, Linux, macOS | Windows, Linux, macOS |
 
 ---
 
@@ -88,8 +88,13 @@ npx live-sim start
 | `--public` | `true` | Create public repo (**unlimited free GitHub Actions minutes**) |
 | `--no-open` | `false` | Do not automatically launch browser |
 
+## 🤝 Credits & Acknowledgements
+
+* Inspired by [bidah/native-sim](https://github.com/bidah/native-sim) for pioneer work on remote iOS simulator streaming.
+* Powered by Apple Silicon macOS GitHub Actions runners, `@expo/serve-sim`, and Cloudflare Quick Tunnels.
+
 ---
 
 ## 📄 License
 
-MIT License
+MIT License © 2026
