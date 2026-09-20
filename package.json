@@ -1,0 +1,25 @@
+{
+  "name": "live-sim",
+  "version": "1.0.0",
+  "description": "Zero-push live iOS simulator streaming with sub-second Fast Refresh for React Native & Expo.",
+  "type": "module",
+  "bin": {
+    "live-sim": "bin/live-sim.js"
+  },
+  "main": "src/cli.js",
+  "keywords": [
+    "expo",
+    "react-native",
+    "ios-simulator",
+    "live-reload",
+    "fast-refresh",
+    "streaming",
+    "cloudflared",
+    "serve-sim"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
